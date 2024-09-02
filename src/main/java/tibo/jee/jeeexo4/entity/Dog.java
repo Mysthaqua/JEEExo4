@@ -22,10 +22,10 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
     protected String name;
-    protected String race;
+    protected String breed;
     protected LocalDate birthDate;
 
-    public String getBirthDate() {
+    public String getBirthDateAsString() {
         return birthDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 }

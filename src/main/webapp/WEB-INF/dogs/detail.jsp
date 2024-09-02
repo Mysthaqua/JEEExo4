@@ -20,18 +20,26 @@
 </h1>
 
 <p>
-    Race:
+    Breed:
     <strong>
-        <%= dog.getRace() %>
+        <%= dog.getBreed() %>
     </strong>
 </p>
 
 <p>
     Birth date:
     <strong>
-        <%= dog.getBirthDate() %>
+        <%= dog.getBirthDateAsString() %>
     </strong>
 </p>
+
+<a href="${pageContext.request.contextPath}/dogs/edit?id=${dog.getId()}">Edit the dog</a>
+
+<form method="post" action="${pageContext.request.contextPath}/dogs">
+    <input name="action" value="delete" type="hidden"/>
+    <input name="id" value="${dog.getId()}" type="hidden"/>
+    <button>Remove the dog</button>
+</form>
 
 <a href="${pageContext.request.contextPath}/dogs">Back</a>
 
